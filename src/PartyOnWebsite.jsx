@@ -1,5 +1,6 @@
 
 import React from "react";
+import ImageSlider from "./ImageSlider";
 
 
 const Card = ({ children, className = "" }) => (
@@ -21,7 +22,8 @@ export default function PartyOnWebsite() {
       {/* Header */}
       <header className="bg-cyan-100 py-6 shadow-md">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Party On!</h1>
+          <img src="/logo.png" alt="Party On Logo" className="h-20 sm:h-24 md:h-32 lg:h-38 w-96 transition-transform duration-300 hover:scale-105 cursor-pointer"
+ />
           <nav className="space-x-6">
             <a href="#home" className="hover:underline">Home</a>
             <a href="#about" className="hover:underline">About</a>
@@ -33,20 +35,13 @@ export default function PartyOnWebsite() {
 
       {/* Home */}
       <section id="home" className="container mx-auto px-4 py-12">
-        <h2 className="text-4xl font-semibold mb-6">Welcome to Party On!</h2>
-        <p className="text-lg mb-4 max-w-2xl">
+        <h2 className="text-4xl font-semibold mb-6 max-w-2xl">Welcome to Party On!</h2>
+        <p className="text-lg mb-4 max-w-7xl">
           Staten Island’s favorite event space for every occasion — birthdays, holidays,
           business events, and more! Make memories and support a good cause while you're at it.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {['Birthday', 'Superbowl', 'Christmas', 'Easter'].map(event => (
-            <img
-              key={event}
-              src={`/${event}.jpg`}
-              alt={`${event} party`}
-              className="rounded-2xl shadow-md object-cover h-40 w-full"
-            />
-          ))}
+        <div className="my-10">
+        <ImageSlider />
         </div>
       </section>
 
@@ -54,7 +49,7 @@ export default function PartyOnWebsite() {
       <section id="about" className="bg-cyan-100 py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
-          <p className="text-lg max-w-3xl">
+          <p className="text-lg max-w-7xl">
             Party On! provides a cozy, flexible space for all kinds of gatherings — from Super Bowl parties to
             bridal showers. Plus, we proudly donate a portion of every reservation to Lou’s Helping Hand Foundation.
           </p>
@@ -94,12 +89,26 @@ export default function PartyOnWebsite() {
           </p>
           <p className="text-lg mb-6">Phone: 718-966-3121</p>
 
-          <form className="grid grid-cols-1 gap-4 max-w-xl">
-            <input className="p-2 rounded border" type="text" placeholder="Your Name" required />
-            <input className="p-2 rounded border" type="email" placeholder="Your Email" required />
-            <textarea className="p-2 rounded border" rows="4" placeholder="Your Message"></textarea>
-            <Button type="submit" className="bg-red-500 hover:bg-red-600 text-white">Send Message</Button>
-          </form>
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+  {/* Contact Form */}
+  <form className="grid grid-cols-1 gap-4 flex-1 max-w-xl">
+    <input className="p-2 rounded border" type="text" placeholder="Your Name" required />
+    <input className="p-2 rounded border" type="email" placeholder="Your Email" required />
+    <textarea className="p-2 rounded border" rows="4" placeholder="Your Message"></textarea>
+    <Button type="submit" className="bg-red-500 hover:bg-red-600 text-white">Send Message</Button>
+  </form>
+
+  {/* Logo on the right */}
+  <div className="flex justify-center md:justify-end flex-1">
+    <img
+      src="/loulogo.png"
+      alt="Lou's Helping Hand Logo"
+      className="h-72 md:h-96 w-full object-contain"
+    />
+  </div>
+</div>
+
+
 
  {/* Instagram Follow Section */}
     <div className="mt-8 flex items-center gap-4">
