@@ -1,11 +1,10 @@
 {
-  "build": {
-    "env": {
-      "CI": "false"
-    },
-    "command": "npm run build",
-    "outputDirectory": "dist"
-  },
-  "framework": "vite"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "CI": "false"
+  }
 }
+
 
